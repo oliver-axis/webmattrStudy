@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.clickhandler:javax-inject-gwt:0.1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/clickhandler/javax-inject-gwt/0.1.0-SNAPSHOT/javax-inject-gwt-0.1.0-20160116.010238-6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/clickhandler/javax-inject-gwt/0.1.0-SNAPSHOT/javax-inject-gwt-0.1.0-20160116.010238-6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/clickhandler/javax-inject-gwt/0.1.0-SNAPSHOT/javax-inject-gwt-0.1.0-20160116.010238-6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
