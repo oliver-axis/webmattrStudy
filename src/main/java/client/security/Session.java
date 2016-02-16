@@ -1,6 +1,7 @@
 package client.security;
 
 //import move.v1.security.user.User;
+import server.security.User;
 import webmattr.router.RouteProxy;
 
 import javax.inject.Inject;
@@ -14,7 +15,7 @@ public class Session {
     private boolean loggedIn;
     private RouteProxy attemptedRoute;
     private String nextPathname;
-//    private User user;
+    private User user;
     private String sessionId;
 
     @Inject

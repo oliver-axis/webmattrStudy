@@ -1,6 +1,7 @@
 package client;
 
 import client.action.ApiV1Module;
+import client.security.Session;
 import com.google.gwt.core.client.GWT;
 import dagger.Component;
 import dagger.Module;
@@ -14,7 +15,6 @@ import server.Action_Locator;
 import client.modules.RootModule;
 import client.modules.Routes;
 import client.modules.gatekeepers.RouteListener;
-//import client.security.Session;
 import client.util.SuperDevModeIndicator;
 import webmattr.Bus;
 import webmattr.react.Props;
@@ -57,9 +57,9 @@ public interface App {
         return instance.routes();
     }
 
-//    static Session getSession() {
-//        return instance.session();
-//    }
+    static Session getSession() {
+        return instance.session();
+    }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////
@@ -74,7 +74,7 @@ public interface App {
 
     RootModule bootstrap();
 
-//    Session session();
+    Session session();
 
     Routes routes();
 

@@ -14,6 +14,8 @@ public class AppEntryPoint implements EntryPoint {
 
         Webmattr.init();
 
+        // route to a page
+        App.getRoutes().getAuth().getLogin().go();
 
     }
 }
