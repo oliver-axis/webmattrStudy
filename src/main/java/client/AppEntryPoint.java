@@ -11,8 +11,15 @@ public class AppEntryPoint implements EntryPoint {
 
 
     public void onModuleLoad() {
-
+        // init
         Webmattr.init();
+
+        // start the App.
+        final App app = App.instance;
+
+        // persist
+        app.v1().dispatcher();
+        app.session().appStarted();
 
         // route to a page
         App.getRoutes().getAuth().getLogin().go();

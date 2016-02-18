@@ -1,11 +1,11 @@
-package client.action;
+package client.action.v1;
 
 import dagger.Component;
 import dagger.Module;
 import dagger.Provides;
-//import move.v1.TypesModule;
 import server.Action_Locator;
 import client.App;
+import server.v1.TypesModule;
 import webmattr.Bus;
 import webmattr.ws.WsDispatcher;
 
@@ -15,7 +15,7 @@ import javax.inject.Singleton;
  *
  */
 @Singleton
-@Component(modules = {App.Core.class, ApiV1Module.M.class})  // , TypesModule.class
+@Component(modules = {App.Core.class, ApiV1Module.M.class, TypesModule.class})
 public interface ApiV1Module {
     Action_Locator root();
 

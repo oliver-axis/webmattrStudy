@@ -1,14 +1,13 @@
 package client;
 
-import client.action.ApiV1Module;
+import client.action.Actions;
+import client.action.v1.ApiV1Module;
 import client.security.Session;
 import com.google.gwt.core.client.GWT;
 import dagger.Component;
 import dagger.Module;
 import dagger.Provides;
-//import move.v1.TypesModule;
 import server.Action_Locator;
-//import client.action.Actions;
 //import client.action.mockApi.DaggerMockApiModule;
 //import client.action.mockApi.MockApi;
 //import client.action.v1.DaggerApiV1Module;
@@ -16,6 +15,7 @@ import client.modules.RootModule;
 import client.modules.Routes;
 import client.modules.gatekeepers.RouteListener;
 import client.util.SuperDevModeIndicator;
+import server.v1.TypesModule;
 import webmattr.Bus;
 import webmattr.react.Props;
 import webmattr.router.History;
@@ -29,7 +29,7 @@ import javax.inject.Singleton;
  *
  */
 @Singleton
-@Component(modules = {App.M.class}) // , TypesModule.class
+@Component(modules = {App.M.class, TypesModule.class})
 public interface App {
     App instance = DaggerApp.create();
 
@@ -70,7 +70,7 @@ public interface App {
 
     Bus bus();
 
-//    Actions actions();
+    Actions actions();
 
     RootModule bootstrap();
 
@@ -80,7 +80,7 @@ public interface App {
 
     RouteListener routeListener();
 
-//    ApiV1Module v1();
+    ApiV1Module v1();
 
 
     ////////////////////////////////////////////////////////////////////////////////////////
@@ -106,19 +106,6 @@ public interface App {
         Action_Locator api(ApiV1Module v1Module) {
             return v1Module.root();
         }
-//
-//        ////////////////////////////////////////////////////////////////////////////////////////
-//        // Configure Mock API Module.
-//        ////////////////////////////////////////////////////////////////////////////////////////
-//        @Provides
-//        @Singleton
-//        MockApi mockApi() {
-//            // Configure MockApi module.
-//            return DaggerMockApiModule
-//                .builder()
-//                .build()
-//                .root();
-//        }
 
         ////////////////////////////////////////////////////////////////////////////////////////
         // Configure Route Gatekeeper.
@@ -167,11 +154,11 @@ public interface App {
             return instance;
         }
 
-//        @Provides
-//        @Singleton
-//        Actions actions() {
-//            return app().actions();
-//        }
+        @Provides
+        @Singleton
+        Actions actions() {
+            return app().actions();
+        }
 
         @Provides
         @Singleton
