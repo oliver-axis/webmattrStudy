@@ -13,8 +13,6 @@ import java.util.List;
 
 /**
  * Maintains the lifecycle of a single Action call.
- *
- * @author Clay Molocznik
  */
 public class ActionCall<IN, OUT> {
     private IN request;

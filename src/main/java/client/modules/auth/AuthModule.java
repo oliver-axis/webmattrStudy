@@ -1,12 +1,10 @@
 package client.modules.auth;
 
+import client.modules.auth.login.LoginPage;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.RunAsyncCallback;
 import dagger.Component;
 import client.App;
-//import client.modules.auth.login.LoginPage;
-//import client.modules.auth.password.ForgotPasswordPage;
-//import client.modules.auth.registration.RegistrationPage;
 import webmattr.Func;
 import webmattr.router.ModuleLoader;
 import webmattr.router.RoutesBuilder;
@@ -31,8 +29,8 @@ public interface AuthModule {
     class Routes extends RoutesBuilder {
         @Inject
         AuthShell shell;
-//        @Inject
-//        LoginPage login;
+        @Inject
+        LoginPage login;
 //        @Inject
 //        ForgotPasswordPage forgotPassword;
 //        @Inject
@@ -45,6 +43,7 @@ public interface AuthModule {
         @Override
         protected void registerComponents() {
             add(shell);
+            add(login);
         }
     }
 
