@@ -15,8 +15,8 @@ import javax.inject.Singleton;
  */
 @Singleton
 public class RouteListener implements RouteGatekeeper {
-//    @Inject
-//    Session session;
+    @Inject
+    Session session;
 
     @Inject
     public RouteListener() {
@@ -31,6 +31,7 @@ public class RouteListener implements RouteGatekeeper {
             session.attemptedRoute(routeProxy);
             replaceStateFunction.call(new ReplaceState(), App.getRoutes().getAuth().getLogin().buildPath());
         }*/
+        Browser.getWindow().getConsole().log("RouteGatekeeper:onEnter: " + routeProxy.getClass().getName());
     }
 
     @Override

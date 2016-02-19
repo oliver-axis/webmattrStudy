@@ -1,6 +1,6 @@
 package server.v1.action.auth;
 
-import io.clickhandler.web.action.ActionProvider;
+import webmattr.action.ActionProvider;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

@@ -5,6 +5,7 @@ import dagger.Provides;
 import server.entity.AbstractEntity;
 import server.entity.security.UserEntity;
 import server.security.User;
+import server.v1.action.auth.Login;
 
 import javax.inject.Provider;
 
@@ -43,4 +44,25 @@ public class TypesModule {
   Provider<User> _246_() {
     return new User.Factory();
   }
+
+  @Provides
+  Login.Response _5() {
+    return Login.Response.Factory.create();
+  }
+
+  @Provides
+  Provider<Login.Response> _5_() {
+    return new Login.Response.Factory();
+  }
+
+  @Provides
+  Login.Request _6() {
+    return Login.Request.Factory.create();
+  }
+
+  @Provides
+  Provider<Login.Request> _6_() {
+    return new Login.Request.Factory();
+  }
+
 }

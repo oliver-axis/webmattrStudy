@@ -1,20 +1,19 @@
 package server.api;
 
-import io.clickhandler.web.Bus;
-import io.clickhandler.web.JSON;
-import io.clickhandler.web.Try;
+
+
+import server.Bus;
+import webmattr.JSON;
+import webmattr.Try;
+import webmattr.action.ResponseCallback;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
 import java.util.Date;
 
-/**
- * Actions provide a command pattern and a standard Request/Reply
- * asynchronous messaging pattern for virtually any sort of task.
- *
- * @author Clay Molocznik
- */
+
 public abstract class AbstractAction<IN, OUT> {
+//    private static final MonthDay JSON = ;
     private Bus bus;
     private Provider<IN> inProvider;
     private Provider<OUT> outProvider;

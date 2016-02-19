@@ -37,6 +37,9 @@
         <gwtp.version>1.5</gwtp.version>
         <junit.version>4.11</junit.version>
         <dagger.version>2.0.2</dagger.version>
+        <guava-gwt.version>18.0</guava-gwt.version>
+        <guava.version>18.0</guava.version>
+        <inject-api.version>1</inject-api.version>
         <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
         <gwt-maven-plugin.version>2.7.0</gwt-maven-plugin.version>
         <build-helper-maven-plugin.version>1.10</build-helper-maven-plugin.version>
@@ -102,6 +105,19 @@
             <groupId>com.google.dagger</groupId>
             <artifactId>dagger-compiler</artifactId>
             <version>${dagger.version}</version>
+        </dependency>
+
+        <!-- Dependency Injection -->
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>${inject-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
 
     </dependencies>
